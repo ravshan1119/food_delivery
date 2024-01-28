@@ -139,7 +139,9 @@ class _LoginPageState extends State<LoginPage> {
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
                   child: GlobalButton(
                     title: "Login",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteNames.tabPage);
+                    },
                     textColor: AppColors.white,
                     color: AppColors.gradient,
                   ),

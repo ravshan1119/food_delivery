@@ -55,7 +55,7 @@ class AppTextField extends StatelessWidget {
         ),
         hintText: hintText,
         hintStyle: TextStyle(
-          fontFamily: "Mulish",
+          fontFamily: "Inter",
           fontSize: 14.sp,
           fontWeight: FontWeight.w400,
           color: AppColors.textHintColor,
@@ -80,7 +80,7 @@ class AppTextField extends StatelessWidget {
       maxLines: maxLines,
       keyboardType: keyboardType,
       style: TextStyle(
-        fontFamily: "Mulish",
+        fontFamily: "Inter",
         fontSize: 14.sp,
         fontWeight: FontWeight.w400,
         color: AppColors.textColor,

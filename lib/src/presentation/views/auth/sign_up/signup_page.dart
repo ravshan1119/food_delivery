@@ -144,7 +144,9 @@ class _SignupPageState extends State<SignupPage> {
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
                   child: GlobalButton(
                     title: "Create Account",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteNames.tabPage);
+                    },
                     textColor: AppColors.white,
                     color: AppColors.gradient,
                   ),

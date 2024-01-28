@@ -5,8 +5,8 @@ import 'package:food_delivery/src/utils/resources/app_colors.dart';
 import 'package:food_delivery/src/utils/resources/app_icons.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class SignUpTextField extends StatefulWidget {
-  const SignUpTextField(
+class SearchTextField extends StatefulWidget {
+  const SearchTextField(
       {super.key,
       required this.hintText,
       this.controller,
@@ -23,10 +23,10 @@ class SignUpTextField extends StatefulWidget {
   final String icon;
 
   @override
-  State<SignUpTextField> createState() => _SignUpTextFieldState();
+  State<SearchTextField> createState() => _SearchTextFieldState();
 }
 
-class _SignUpTextFieldState extends State<SignUpTextField> {
+class _SearchTextFieldState extends State<SearchTextField> {
   bool obscureText = false;
 
   @override
@@ -63,41 +63,41 @@ class _SignUpTextFieldState extends State<SignUpTextField> {
         ),
         border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            borderSide: BorderSide(color: AppColors.textLabelColor)),
+            borderSide: BorderSide(color: Colors.transparent)),
         focusedErrorBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            borderSide: BorderSide(color: AppColors.textLabelColor)),
+            borderSide: BorderSide(color: Colors.transparent)),
         errorBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            borderSide: BorderSide(color: AppColors.textLabelColor)),
+            borderSide: BorderSide(color: Colors.transparent)),
         disabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            borderSide: BorderSide(color: AppColors.textLabelColor)),
+            borderSide: BorderSide(color: Colors.transparent)),
         enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            borderSide: BorderSide(color: AppColors.textLabelColor)),
+            borderSide: BorderSide(color: Colors.transparent)),
         focusColor: AppColors.c_53e88b,
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: AppColors.c_53e88b,
+            color: Colors.transparent,
           ),
           borderRadius: BorderRadius.circular(15),
         ),
         hintText: widget.hintText,
         hintStyle: TextStyle(
           fontFamily: "Inter",
-          fontSize: 14.sp,
+          fontSize: 12.sp,
           fontWeight: FontWeight.w400,
-          color: AppColors.textHintColor,
+          color: AppColors.c_fead1d,
         ),
         filled: true,
-        fillColor: AppColors.c_F4F4F4,
+        fillColor: AppColors.c_FBF4EB,
       ),
       maxLines: widget.maxLines,
       keyboardType: widget.keyboardType,
       style: TextStyle(
         fontFamily: "Inter",
-        fontSize: 14.sp,
+        fontSize: 12.sp,
         fontWeight: FontWeight.w400,
         color: AppColors.textColor,
       ),
