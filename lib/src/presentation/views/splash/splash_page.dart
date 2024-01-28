@@ -6,12 +6,30 @@ import 'package:food_delivery/src/utils/resources/app_images.dart';
 
 import '../../../utils/resources/gradient_text.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  goToOnBoarding(BuildContext context) async {
+    await Future.delayed(const Duration(seconds: 3));
+    if (context.mounted) {
+      Navigator.pushNamed(context, RouteNames.onBoardingPage);
+    }
+  }
+
+  @override
+  void initState() {
     goToOnBoarding(context);
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
@@ -57,12 +75,5 @@ class SplashPage extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-goToOnBoarding(BuildContext context) async {
-  await Future.delayed(const Duration(seconds: 3));
-  if (context.mounted) {
-    Navigator.pushNamed(context, RouteNames.onBoardingPage);
   }
 }

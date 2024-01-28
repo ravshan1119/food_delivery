@@ -94,28 +94,42 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   20.ph,
                   Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Checkbox(
-                            value: true,
-                            onChanged: (value) {},
-                            fillColor: MaterialStateColor.resolveWith(
-                              (states) => AppColors.c_53e88b,
-                            )),
-                        8.pw,
-                        Text(
-                          "Keep Me Signed In",
-                          style: TextStyle(
-                            fontFamily: "Inter",
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff000000),
-                          ),
-                          textAlign: TextAlign.start,
-                        )
-                      ]),
-
+                    children: [
+                      const Icon(
+                        Icons.check_box,
+                        color: AppColors.c_53e88b,
+                      ),
+                      8.pw,
+                      Text(
+                        "Keep Me Signed In",
+                        style: TextStyle(
+                          fontFamily: "Inter",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff000000),
+                        ),
+                      )
+                    ],
+                  ),
+                  14.ph,
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.check_box,
+                        color: AppColors.c_53e88b,
+                      ),
+                      8.pw,
+                      Text(
+                        "Email Me About Special Pricing",
+                        style: TextStyle(
+                          fontFamily: "Inter",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff000000),
+                        ),
+                      )
+                    ],
+                  ),
                 ],
               ),
             ),

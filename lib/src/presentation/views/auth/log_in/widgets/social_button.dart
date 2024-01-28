@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/utils/resources/app_colors.dart';
 import 'package:food_delivery/src/utils/resources/size_extension.dart';
@@ -40,7 +41,7 @@ class SocialButton extends StatelessWidget {
               border: Border.all(color: borderColor)),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
               child: Row(
                 children: [
                   logo,
@@ -48,9 +49,9 @@ class SocialButton extends StatelessWidget {
                   Text(
                     overflow: TextOverflow.ellipsis,
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: "Inter",
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.textColor,
                     ),
