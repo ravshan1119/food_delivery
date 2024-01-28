@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/utils/resources/app_colors.dart';
+import 'package:food_delivery/src/utils/resources/app_icons.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpTextField extends StatelessWidget {
@@ -33,6 +34,13 @@ class SignUpTextField extends StatelessWidget {
           keyboardType == TextInputType.phone ? [maskFormatter] : null,
       controller: controller,
       decoration: InputDecoration(
+        suffixIcon: keyboardType == TextInputType.visiblePassword
+            ? Padding(
+                padding: EdgeInsets.only(
+                    top: 17.h, bottom: 16.h, left: 16.w, right: 20.w),
+                child: SvgPicture.asset(AppIcons.show),
+              )
+            : null,
         prefixIcon: Padding(
           padding:
               EdgeInsets.only(top: 17.h, bottom: 16.h, left: 20.w, right: 16.w),

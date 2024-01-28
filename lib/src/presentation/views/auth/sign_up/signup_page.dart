@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/config/router/app_routes.dart';
 import 'package:food_delivery/src/presentation/views/auth/log_in/widgets/social_button.dart';
@@ -91,17 +92,38 @@ class _SignupPageState extends State<SignupPage> {
                   const SignUpTextField(
                     hintText: "Password",
                     icon: AppIcons.message,
+                    keyboardType: TextInputType.visiblePassword,
                   ),
-
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.25),
-                    child: GlobalButton(
-                      title: "Login",
-                      onTap: () {},
-                      textColor: AppColors.white,
-                      color: AppColors.gradient,
-                    ),
+                  20.ph,
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Checkbox(
+                        value: true,
+                        onChanged: (value) {},
+                        fillColor: MaterialStateColor.resolveWith(
+                          (states) => AppColors.c_53e88b,
+                        )
+                      ),
+                      8.pw,
+                      Text(
+                        "Keep Me Signed In",
+                        style: TextStyle(
+                          fontFamily: "Inter",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff000000),
+                        ),
+                        textAlign: TextAlign.start,
+                      )
+                    ]
+                  ),
+                  GlobalButton(
+                    title: "Create Account",
+                    onTap: () {},
+                    textColor: AppColors.white,
+                    color: AppColors.gradient,
                   ),
                   Center(
                     child: GestureDetector(
