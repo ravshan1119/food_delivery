@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/config/router/app_routes.dart';
 import 'package:food_delivery/src/presentation/views/auth/log_in/widgets/social_button.dart';
+import 'package:food_delivery/src/presentation/views/auth/sign_up/widgets/signup_text_field.dart';
 import 'package:food_delivery/src/presentation/widgets/app_text_field.dart';
 import 'package:food_delivery/src/utils/resources/app_icons.dart';
 import 'package:food_delivery/src/utils/resources/size_extension.dart';
@@ -67,7 +68,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   60.ph,
                   const Text(
-                    "Login To Your Account",
+                    "Sign Up For Free",
                     style: TextStyle(
                       fontFamily: "Inter",
                       fontSize: 20,
@@ -77,56 +78,21 @@ class _SignupPageState extends State<SignupPage> {
                     textAlign: TextAlign.center,
                   ),
                   40.ph,
-                  const AppTextField(hintText: "Email"),
+                  const SignUpTextField(
+                    hintText: "Name",
+                    icon: AppIcons.profile,
+                  ),
                   12.ph,
-                  const AppTextField(hintText: "Password"),
-                  20.ph,
-                  const Text(
-                    "Or Continue With",
-                    style: TextStyle(
-                      fontFamily: "Inter",
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.textColor,
-                    ),
-                    textAlign: TextAlign.center,
+                  const SignUpTextField(
+                    hintText: "Email",
+                    icon: AppIcons.message,
                   ),
-                  20.ph,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SocialButton(
-                        color: AppColors.white,
-                        borderColor: AppColors.c_F4F4F4,
-                        width: MediaQuery.of(context).size.width / 2.5,
-                        title: "Facebook",
-                        logo: SvgPicture.asset(AppIcons.facebook),
-                        onTap: () {},
-                      ),
-                      21.pw,
-                      SocialButton(
-                        color: AppColors.white,
-                        borderColor: AppColors.c_F4F4F4,
-                        width: MediaQuery.of(context).size.width / 2.5,
-                        title: "Google",
-                        logo: SvgPicture.asset(AppIcons.google),
-                        onTap: () {},
-                      ),
-                    ],
+                  12.ph,
+                  const SignUpTextField(
+                    hintText: "Password",
+                    icon: AppIcons.message,
                   ),
-                  20.ph,
-                  const Center(
-                    child: GradientText(
-                      "Forgot Your Password?",
-                      style: TextStyle(
-                        fontFamily: "Inter",
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      gradient: AppColors.gradient,
-                    ),
-                  ),
-                  36.ph,
+
                   Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.25),
@@ -137,7 +103,6 @@ class _SignupPageState extends State<SignupPage> {
                       color: AppColors.gradient,
                     ),
                   ),
-                  20.ph,
                   Center(
                     child: GestureDetector(
                       onTap: () {
