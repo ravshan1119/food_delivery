@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_delivery/src/config/router/app_routes.dart';
 import 'package:food_delivery/src/utils/resources/app_colors.dart';
 import 'package:food_delivery/src/utils/resources/app_images.dart';
@@ -24,18 +25,18 @@ class SplashPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(AppImages.logo),
-                const GradientText('FoodNinja',
+                GradientText('FoodNinja',
                     style: TextStyle(
                       fontFamily: "Viga",
-                      fontSize: 40,
+                      fontSize: 40.sp,
                       fontWeight: FontWeight.w400,
                     ),
                     gradient: AppColors.gradient),
-                const Text(
+                Text(
                   "Deliever Favorite Food",
                   style: TextStyle(
                     fontFamily: "Inter",
-                    fontSize: 13,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textColor,
                   ),

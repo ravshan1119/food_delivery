@@ -64,7 +64,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
               },
               textColor: AppColors.white,
               color: AppColors.gradient,
-              padding: const EdgeInsets.symmetric(vertical: 18),
             ),
           ),
           const SizedBox(),

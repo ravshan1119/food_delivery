@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/presentation/views/auth/log_in/widgets/social_button.dart';
 import 'package:food_delivery/src/presentation/widgets/app_text_field.dart';
@@ -41,51 +42,50 @@ class _LoginPageState extends State<LoginPage> {
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: ListView(
                 children: [
-                  14.ph,
-                  SizedBox(height: 140, child: Image.asset(AppImages.logo)),
-                  const Center(
+                  SizedBox(height: 130.h, child: Image.asset(AppImages.logo)),
+                  Center(
                     child: GradientText('FoodNinja',
                         style: TextStyle(
                           fontFamily: "Viga",
-                          fontSize: 40,
+                          fontSize: 40.sp,
                           fontWeight: FontWeight.w400,
                         ),
                         gradient: AppColors.gradient),
                   ),
-                  const Text(
+                  Text(
                     "Deliever Favorite Food",
                     style: TextStyle(
                       fontFamily: "Inter",
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textColor,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  60.ph,
-                  const Text(
+                  40.ph,
+                  Text(
                     "Login To Your Account",
                     style: TextStyle(
                       fontFamily: "Inter",
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.textColor,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  40.ph,
+                  20.ph,
                   const AppTextField(hintText: "Email"),
                   12.ph,
                   const AppTextField(hintText: "Password"),
                   20.ph,
-                  const Text(
+                  Text(
                     "Or Continue With",
                     style: TextStyle(
                       fontFamily: "Inter",
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.textColor,
                     ),
@@ -115,12 +115,12 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                   20.ph,
-                  const Center(
+                  Center(
                     child: GradientText(
                       "Forgot Your Password?",
                       style: TextStyle(
                         fontFamily: "Inter",
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
                       ),
                       gradient: AppColors.gradient,
@@ -137,17 +137,17 @@ class _LoginPageState extends State<LoginPage> {
                       color: AppColors.gradient,
                     ),
                   ),
-                  20.ph,
+                  // 10.ph,
                   Center(
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, RouteNames.signupPage);
                       },
-                      child: const GradientText(
+                      child: GradientText(
                         "sign up",
                         style: TextStyle(
                           fontFamily: "Inter",
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
                         gradient: AppColors.gradient,
