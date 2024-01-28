@@ -5,7 +5,7 @@ import 'package:food_delivery/src/utils/resources/app_colors.dart';
 import 'package:food_delivery/src/utils/resources/app_icons.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class SignUpTextField extends StatelessWidget {
+class SignUpTextField extends StatefulWidget {
   const SignUpTextField(
       {super.key,
       required this.hintText,
@@ -23,28 +23,43 @@ class SignUpTextField extends StatelessWidget {
   final String icon;
 
   @override
+  State<SignUpTextField> createState() => _SignUpTextFieldState();
+}
+
+class _SignUpTextFieldState extends State<SignUpTextField> {
+  bool obscureText = false;
+
+  @override
   Widget build(BuildContext context) {
     var maskFormatter = MaskTextInputFormatter(
         mask: '(##) ###-##-##',
         filter: {"#": RegExp(r'[0-9]')},
         type: MaskAutoCompletionType.lazy);
     return TextField(
-      textInputAction: textInputAction,
+      obscureText: obscureText,
+      textInputAction: widget.textInputAction,
       inputFormatters:
-          keyboardType == TextInputType.phone ? [maskFormatter] : null,
-      controller: controller,
+          widget.keyboardType == TextInputType.phone ? [maskFormatter] : null,
+      controller: widget.controller,
       decoration: InputDecoration(
-        suffixIcon: keyboardType == TextInputType.visiblePassword
-            ? Padding(
-                padding: EdgeInsets.only(
-                    top: 17.h, bottom: 16.h, left: 16.w, right: 20.w),
-                child: SvgPicture.asset(AppIcons.show),
+        suffixIcon: widget.keyboardType == TextInputType.visiblePassword
+            ? GestureDetector(
+                onTap: () {
+                  obscureText = !obscureText;
+                  setState(() {});
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: 17.h, bottom: 16.h, left: 16.w, right: 20.w),
+                  child: SvgPicture.asset(
+                      obscureText ? AppIcons.eye : AppIcons.show),
+                ),
               )
             : null,
         prefixIcon: Padding(
           padding:
               EdgeInsets.only(top: 17.h, bottom: 16.h, left: 20.w, right: 16.w),
-          child: SvgPicture.asset(icon),
+          child: SvgPicture.asset(widget.icon),
         ),
         border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -68,7 +83,7 @@ class SignUpTextField extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(15),
         ),
-        hintText: hintText,
+        hintText: widget.hintText,
         hintStyle: TextStyle(
           fontFamily: "Mulish",
           fontSize: 14.sp,
@@ -78,8 +93,8 @@ class SignUpTextField extends StatelessWidget {
         filled: true,
         fillColor: AppColors.c_F4F4F4,
       ),
-      maxLines: maxLines,
-      keyboardType: keyboardType,
+      maxLines: widget.maxLines,
+      keyboardType: widget.keyboardType,
       style: TextStyle(
         fontFamily: "Mulish",
         fontSize: 14.sp,

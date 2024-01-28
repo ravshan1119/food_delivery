@@ -1,11 +1,16 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_delivery/src/config/router/app_routes.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main() => runApp(
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => const MainApp(), // Wrap your app
+  ),
+);
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -23,6 +28,8 @@ class MainApp extends StatelessWidget {
           dark: ThemeData.dark(),
           initial: AdaptiveThemeMode.light,
           builder: (theme, darkTheme) => MaterialApp(
+            locale: DevicePreview.locale(context),
+            builder: DevicePreview.appBuilder,
             debugShowCheckedModeBanner: false,
             theme: theme,
             darkTheme: darkTheme,

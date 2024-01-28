@@ -38,4 +38,5 @@ class AppIcons {
   static const String starTwo = "assets/svg/star_two.svg";
   static const String volumeOff = "assets/svg/volume_off.svg";
   static const String volumeUp = "assets/svg/volume_up.svg";
+  static const String lock = "assets/svg/lock.svg";
 }

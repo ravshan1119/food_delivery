@@ -98,7 +98,6 @@ class _LoginPageState extends State<LoginPage> {
                       SocialButton(
                         color: AppColors.white,
                         borderColor: AppColors.c_F4F4F4,
-                        width: MediaQuery.of(context).size.width / 2.5,
                         title: "Facebook",
                         logo: SvgPicture.asset(AppIcons.facebook),
                         onTap: () {},
@@ -107,7 +106,6 @@ class _LoginPageState extends State<LoginPage> {
                       SocialButton(
                         color: AppColors.white,
                         borderColor: AppColors.c_F4F4F4,
-                        width: MediaQuery.of(context).size.width / 2.5,
                         title: "Google",
                         logo: SvgPicture.asset(AppIcons.google),
                         onTap: () {},
@@ -127,35 +125,43 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   36.ph,
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.25),
-                    child: GlobalButton(
-                      title: "Login",
-                      onTap: () {},
-                      textColor: AppColors.white,
-                      color: AppColors.gradient,
-                    ),
-                  ),
-                  // 10.ph,
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, RouteNames.signupPage);
-                      },
-                      child: GradientText(
-                        "sign up",
-                        style: TextStyle(
-                          fontFamily: "Inter",
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                        gradient: AppColors.gradient,
-                      ),
-                    ),
-                  )
                 ],
               ),
+            ),
+          ),
+          Positioned(
+            bottom: 10.h,
+            left: 0,
+            right: 0,
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.w),
+                  child: GlobalButton(
+                    title: "Login",
+                    onTap: () {},
+                    textColor: AppColors.white,
+                    color: AppColors.gradient,
+                  ),
+                ),
+                10.ph,
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteNames.signupPage);
+                    },
+                    child: GradientText(
+                      "sign up",
+                      style: TextStyle(
+                        fontFamily: "Inter",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      gradient: AppColors.gradient,
+                    ),
+                  ),
+                ),
+              ],
             ),
           )
         ],

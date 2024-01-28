@@ -15,7 +15,6 @@ class SocialButton extends StatelessWidget {
     this.borderColor = Colors.transparent,
     required this.onTap,
     this.padding,
-    this.width,
   });
 
   final Color color;
@@ -27,7 +26,6 @@ class SocialButton extends StatelessWidget {
   final VoidCallback onTap;
   final EdgeInsets? padding;
   final SvgPicture logo;
-  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -35,33 +33,30 @@ class SocialButton extends StatelessWidget {
       padding: padding == null ? EdgeInsets.zero : padding!,
       child: ZoomTapAnimation(
         onTap: onTap,
-        child: SizedBox(
-          width: width,
-          child: Container(
-            decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(radius),
-                border: Border.all(color: borderColor)),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                child: Row(
-                  children: [
-                    logo,
-                    14.pw,
-                    Text(
-                      overflow: TextOverflow.ellipsis,
-                      title,
-                      style: const TextStyle(
-                        fontFamily: "Inter",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.textColor,
-                      ),
-                      textAlign: TextAlign.center,
+        child: Container(
+          decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(radius),
+              border: Border.all(color: borderColor)),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              child: Row(
+                children: [
+                  logo,
+                  14.pw,
+                  Text(
+                    overflow: TextOverflow.ellipsis,
+                    title,
+                    style: const TextStyle(
+                      fontFamily: "Inter",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.textColor,
                     ),
-                  ],
-                ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
             ),
           ),

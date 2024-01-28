@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/config/router/app_routes.dart';
-import 'package:food_delivery/src/presentation/views/auth/log_in/widgets/social_button.dart';
 import 'package:food_delivery/src/presentation/views/auth/sign_up/widgets/signup_text_field.dart';
-import 'package:food_delivery/src/presentation/widgets/app_text_field.dart';
 import 'package:food_delivery/src/utils/resources/app_icons.dart';
 import 'package:food_delivery/src/utils/resources/size_extension.dart';
 
@@ -21,6 +18,8 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  bool passwordVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,42 +42,41 @@ class _SignupPageState extends State<SignupPage> {
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: ListView(
                 children: [
-                  14.ph,
-                  SizedBox(height: 140, child: Image.asset(AppImages.logo)),
-                  const Center(
+                  SizedBox(height: 130.h, child: Image.asset(AppImages.logo)),
+                  Center(
                     child: GradientText('FoodNinja',
                         style: TextStyle(
                           fontFamily: "Viga",
-                          fontSize: 40,
+                          fontSize: 40.sp,
                           fontWeight: FontWeight.w400,
                         ),
                         gradient: AppColors.gradient),
                   ),
-                  const Text(
+                  Text(
                     "Deliever Favorite Food",
                     style: TextStyle(
                       fontFamily: "Inter",
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textColor,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  60.ph,
-                  const Text(
+                  40.ph,
+                  Text(
                     "Sign Up For Free",
                     style: TextStyle(
                       fontFamily: "Inter",
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.textColor,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  40.ph,
+                  20.ph,
                   const SignUpTextField(
                     hintText: "Name",
                     icon: AppIcons.profile,
@@ -91,58 +89,70 @@ class _SignupPageState extends State<SignupPage> {
                   12.ph,
                   const SignUpTextField(
                     hintText: "Password",
-                    icon: AppIcons.message,
+                    icon: AppIcons.lock,
                     keyboardType: TextInputType.visiblePassword,
                   ),
                   20.ph,
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Checkbox(
-                        value: true,
-                        onChanged: (value) {},
-                        fillColor: MaterialStateColor.resolveWith(
-                          (states) => AppColors.c_53e88b,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Checkbox(
+                            value: true,
+                            onChanged: (value) {},
+                            fillColor: MaterialStateColor.resolveWith(
+                              (states) => AppColors.c_53e88b,
+                            )),
+                        8.pw,
+                        Text(
+                          "Keep Me Signed In",
+                          style: TextStyle(
+                            fontFamily: "Inter",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xff000000),
+                          ),
+                          textAlign: TextAlign.start,
                         )
-                      ),
-                      8.pw,
-                      Text(
-                        "Keep Me Signed In",
-                        style: TextStyle(
-                          fontFamily: "Inter",
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xff000000),
-                        ),
-                        textAlign: TextAlign.start,
-                      )
-                    ]
-                  ),
-                  GlobalButton(
+                      ]),
+
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 10,
+            left: 0,
+            right: 0,
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.w),
+                  child: GlobalButton(
                     title: "Create Account",
                     onTap: () {},
                     textColor: AppColors.white,
                     color: AppColors.gradient,
                   ),
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, RouteNames.loginPage);
-                      },
-                      child: const GradientText(
-                        "log in",
-                        style: TextStyle(
-                          fontFamily: "Inter",
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                        gradient: AppColors.gradient,
+                ),
+                10.ph,
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteNames.loginPage);
+                    },
+                    child: GradientText(
+                      "log in",
+                      style: TextStyle(
+                        fontFamily: "Inter",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
+                      gradient: AppColors.gradient,
                     ),
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
           )
         ],
