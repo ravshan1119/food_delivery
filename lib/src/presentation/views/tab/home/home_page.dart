@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_delivery/src/config/router/app_routes.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/banner.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/home_notification_item.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/popular_item.dart';
@@ -55,14 +56,19 @@ class _HomePageState extends State<HomePage> {
                         icon: AppIcons.search),
                   ),
                   9.pw,
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: AppColors.c_FBF4EB,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(14.w),
-                      child: SvgPicture.asset(AppIcons.filter),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteNames.filterPage);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: AppColors.c_FBF4EB,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(14.w),
+                        child: SvgPicture.asset(AppIcons.filter),
+                      ),
                     ),
                   )
                 ],
@@ -74,30 +80,44 @@ class _HomePageState extends State<HomePage> {
               child: const BannerItem(),
             ),
             24.ph,
-           ViewMoreItem(labelName: "Nearest Restaurant",onTap: (){},),
-
-            ...List.generate(2, (index) => Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  RestaurantItem(image: AppImages.restaurantOne, restaurantName: "Vegan Resto", time: "12 Mins"),
-                  RestaurantItem(image: AppImages.restaurantTwo, restaurantName: "Healthy Food", time: "8 Mins"),
-              
-                ],
+            ViewMoreItem(
+              labelName: "Nearest Restaurant",
+              onTap: () {},
+            ),
+            10.ph,
+            ...List.generate(
+              2,
+              (index) => Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    RestaurantItem(
+                        image: AppImages.restaurantOne,
+                        restaurantName: "Vegan Resto",
+                        time: "12 Mins"),
+                    RestaurantItem(
+                        image: AppImages.restaurantTwo,
+                        restaurantName: "Healthy Food",
+                        time: "8 Mins"),
+                  ],
+                ),
               ),
-            ),),
-            ViewMoreItem(labelName: "Popular Menu",onTap: (){},),
-            ...List.generate(2, (index) => Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
-              child: 
-                  const PopularItem(price: "15", foodName: "Vegan Resto", time: "12 Mins"),
-            ),),
-
-            
-
-
-            
+            ),
+            24.ph,
+            ViewMoreItem(
+              labelName: "Popular Menu",
+              onTap: () {},
+            ),
+            10.ph,
+            ...List.generate(
+              2,
+              (index) => Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+                child: const PopularItem(
+                    price: "15", foodName: "Vegan Resto", time: "12 Mins"),
+              ),
+            ),
           ],
         ),
       ]),

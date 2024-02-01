@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/home_page.dart';
+import 'package:food_delivery/src/presentation/views/tab/profile/profile_page.dart';
 import 'package:food_delivery/src/utils/resources/app_colors.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
@@ -18,10 +19,7 @@ class _TabPageState extends State<TabPage> {
       TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w600);
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
+    ProfilePage(),
     Text(
       'Search',
       style: optionStyle,
@@ -77,8 +75,8 @@ class _TabPageState extends State<TabPage> {
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                 ),
                 GButton(
-                  icon: LineIcons.heart,
-                  text: 'Likes',
+                  icon: LineIcons.user,
+                  text: 'Profile',
                   textStyle: TextStyle(
                     fontFamily: "Inter",
                     fontSize: 10,
@@ -89,8 +87,8 @@ class _TabPageState extends State<TabPage> {
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                 ),
                 GButton(
-                  icon: LineIcons.search,
-                  text: 'Search',
+                  icon: LineIcons.shoppingBag,
+                  text: 'Order',
                   textStyle: TextStyle(
                     fontFamily: "Inter",
                     fontSize: 10,
@@ -102,7 +100,7 @@ class _TabPageState extends State<TabPage> {
                 ),
                 GButton(
                   icon: LineIcons.user,
-                  text: 'Profile',
+                  text: 'Chat',
                   textStyle: TextStyle(
                     fontFamily: "Inter",
                     fontSize: 10,
