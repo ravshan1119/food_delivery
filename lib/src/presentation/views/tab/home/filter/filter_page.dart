@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/filter/widgets/filter_item.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/filter/widgets/filter_item_three.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/filter/widgets/filter_item_two.dart';
 import 'package:food_delivery/src/presentation/widgets/global_button.dart';
 import 'package:food_delivery/src/utils/resources/size_extension.dart';
 
@@ -41,6 +44,20 @@ class FilterPage extends StatelessWidget {
                   hintText: "What do you want to order?",
                   icon: AppIcons.search),
             ),
+            24.ph,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  const FilterItemOne(),
+                  24.ph,
+                  const FilterItemTwo(),
+                  24.ph,
+                  const FilterItemThree(),
+                ],
+              ),
+            )
+
           ],
         ),
         Positioned(
