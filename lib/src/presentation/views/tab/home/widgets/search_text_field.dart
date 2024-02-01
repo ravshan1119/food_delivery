@@ -36,6 +36,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
         filter: {"#": RegExp(r'[0-9]')},
         type: MaskAutoCompletionType.lazy);
     return TextField(
+      minLines: 1,
       obscureText: obscureText,
       textInputAction: widget.textInputAction,
       inputFormatters:
