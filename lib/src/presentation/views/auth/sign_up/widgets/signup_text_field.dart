@@ -45,8 +45,8 @@ class _SignUpTextFieldState extends State<SignUpTextField> {
         suffixIcon: widget.keyboardType == TextInputType.visiblePassword
             ? GestureDetector(
                 onTap: () {
-                  obscureText = !obscureText;
-                  setState(() {});
+                  // obscureText = !obscureText;
+                  // setState(() {});
                 },
                 child: Padding(
                   padding: EdgeInsets.only(
