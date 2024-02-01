@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/home_page.dart';
+import 'package:food_delivery/src/presentation/views/tab/profile/profile_page.dart';
 import 'package:food_delivery/src/utils/resources/app_colors.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
@@ -18,10 +19,7 @@ class _TabPageState extends State<TabPage> {
       TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w600);
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
+    ProfilePage(),
     Text(
       'Search',
       style: optionStyle,
