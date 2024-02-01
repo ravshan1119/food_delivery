@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_delivery/src/presentation/widgets/global_button.dart';
 import 'package:food_delivery/src/utils/resources/size_extension.dart';
 
 import '../../../../../utils/resources/app_icons.dart';
@@ -41,6 +42,18 @@ class FilterPage extends StatelessWidget {
                   icon: AppIcons.search),
             ),
           ],
+        ),
+        Positioned(
+          bottom: 24.w,
+          right: 24.w,
+          left: 24.w,
+          child: GlobalButton(
+            title: "Search",
+            onTap: () {
+              Navigator.pop(context);
+            },
+            textColor: Colors.white,
+          ),
         ),
       ]),
     );
