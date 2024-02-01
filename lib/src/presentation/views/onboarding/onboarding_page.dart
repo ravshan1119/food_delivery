@@ -53,7 +53,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               title: "Next",
               onTap: () {
                 if (pageIndex == 1) {
-                  Navigator.pushNamed(context, RouteNames.loginPage);
+                  Navigator.pushReplacementNamed(context, RouteNames.loginPage);
                 } else {
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 500),
