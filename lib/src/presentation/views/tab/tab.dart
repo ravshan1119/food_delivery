@@ -77,8 +77,8 @@ class _TabPageState extends State<TabPage> {
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                 ),
                 GButton(
-                  icon: LineIcons.heart,
-                  text: 'Likes',
+                  icon: LineIcons.user,
+                  text: 'Profile',
                   textStyle: TextStyle(
                     fontFamily: "Inter",
                     fontSize: 10,
@@ -89,8 +89,8 @@ class _TabPageState extends State<TabPage> {
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                 ),
                 GButton(
-                  icon: LineIcons.search,
-                  text: 'Search',
+                  icon: LineIcons.shoppingBag,
+                  text: 'Order',
                   textStyle: TextStyle(
                     fontFamily: "Inter",
                     fontSize: 10,
@@ -102,7 +102,7 @@ class _TabPageState extends State<TabPage> {
                 ),
                 GButton(
                   icon: LineIcons.user,
-                  text: 'Profile',
+                  text: 'Chat',
                   textStyle: TextStyle(
                     fontFamily: "Inter",
                     fontSize: 10,
