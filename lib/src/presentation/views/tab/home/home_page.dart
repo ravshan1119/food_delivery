@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_delivery/src/config/router/app_routes.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/banner.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/home_notification_item.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/popular_item.dart';
@@ -55,14 +56,19 @@ class _HomePageState extends State<HomePage> {
                         icon: AppIcons.search),
                   ),
                   9.pw,
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: AppColors.c_FBF4EB,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(14.w),
-                      child: SvgPicture.asset(AppIcons.filter),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteNames.filterPage);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: AppColors.c_FBF4EB,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(14.w),
+                        child: SvgPicture.asset(AppIcons.filter),
+                      ),
                     ),
                   )
                 ],
