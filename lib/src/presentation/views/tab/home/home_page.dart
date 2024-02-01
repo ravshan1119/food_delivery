@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/banner.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/home_notification_item.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/widgets/popular_item.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/restaurant_item.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/search_text_field.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/view_more.dart';
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               child: const BannerItem(),
             ),
             24.ph,
-            const ViewMoreItem(),
+           ViewMoreItem(labelName: "Nearest Restaurant",onTap: (){},),
 
             ...List.generate(2, (index) => Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
@@ -85,7 +86,13 @@ class _HomePageState extends State<HomePage> {
               
                 ],
               ),
-            ))
+            ),),
+            ViewMoreItem(labelName: "Popular Menu",onTap: (){},),
+            ...List.generate(2, (index) => Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+              child: 
+                  const PopularItem(price: "15", foodName: "Vegan Resto", time: "12 Mins"),
+            ),),
 
             
 

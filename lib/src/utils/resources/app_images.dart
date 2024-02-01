@@ -18,5 +18,7 @@ class AppImages {
   static const String groupTwo = "assets/image/group_two.png";
   static const String restaurantOne = "assets/image/restaurant_one.png";
   static const String restaurantTwo = "assets/image/restaurant_two.png";
+  static const String photoPopular = "assets/image/photo_popular.png";
+
 
 }

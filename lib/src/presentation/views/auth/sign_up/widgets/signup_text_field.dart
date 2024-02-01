@@ -10,14 +10,14 @@ class SignUpTextField extends StatefulWidget {
       {super.key,
       required this.hintText,
       this.controller,
-      this.maxLines,
+      this.maxLines =1,
       this.keyboardType,
       this.textInputAction,
       required this.icon});
 
   final String hintText;
   final TextEditingController? controller;
-  final int? maxLines;
+  final int? maxLines ;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final String icon;
