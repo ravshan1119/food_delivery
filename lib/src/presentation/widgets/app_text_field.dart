@@ -8,14 +8,14 @@ class AppTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.controller,
-    this.maxLines,
+    this.maxLines = 1,
     this.keyboardType,
     this.textInputAction,
   });
 
   final String hintText;
   final TextEditingController? controller;
-  final int? maxLines;
+  final int maxLines;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
 

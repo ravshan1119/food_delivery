@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/widgets/banner.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/home_notification_item.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/widgets/popular_item.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/widgets/restaurant_item.dart';
 import 'package:food_delivery/src/presentation/views/tab/home/widgets/search_text_field.dart';
+import 'package:food_delivery/src/presentation/views/tab/home/widgets/view_more.dart';
 import 'package:food_delivery/src/utils/resources/app_icons.dart';
 import 'package:food_delivery/src/utils/resources/app_images.dart';
 import 'package:food_delivery/src/utils/resources/size_extension.dart';
@@ -64,7 +68,36 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            24.ph,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: const BannerItem(),
+            ),
+            24.ph,
+           ViewMoreItem(labelName: "Nearest Restaurant",onTap: (){},),
 
+            ...List.generate(2, (index) => Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  RestaurantItem(image: AppImages.restaurantOne, restaurantName: "Vegan Resto", time: "12 Mins"),
+                  RestaurantItem(image: AppImages.restaurantTwo, restaurantName: "Healthy Food", time: "8 Mins"),
+              
+                ],
+              ),
+            ),),
+            ViewMoreItem(labelName: "Popular Menu",onTap: (){},),
+            ...List.generate(2, (index) => Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
+              child: 
+                  const PopularItem(price: "15", foodName: "Vegan Resto", time: "12 Mins"),
+            ),),
+
+            
+
+
+            
           ],
         ),
       ]),

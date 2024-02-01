@@ -93,7 +93,6 @@ class _SearchTextFieldState extends State<SearchTextField> {
         filled: true,
         fillColor: AppColors.c_FBF4EB,
       ),
-      maxLines: widget.maxLines,
       keyboardType: widget.keyboardType,
       style: TextStyle(
         fontFamily: "Inter",
