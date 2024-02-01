@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
   goToOnBoarding(BuildContext context) async {
     await Future.delayed(const Duration(seconds: 3));
     if (context.mounted) {
-      Navigator.pushNamed(context, RouteNames.onBoardingPage);
+      Navigator.pushReplacementNamed(context, RouteNames.onBoardingPage);
     }
   }
 

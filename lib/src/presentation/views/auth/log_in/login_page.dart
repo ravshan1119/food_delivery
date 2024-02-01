@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                 Center(
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, RouteNames.signupPage);
+                      Navigator.pushReplacementNamed(context, RouteNames.signupPage);
                     },
                     child: GradientText(
                       "sign up",
