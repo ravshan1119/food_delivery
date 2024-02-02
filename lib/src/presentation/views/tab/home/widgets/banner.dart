@@ -31,20 +31,17 @@ class BannerItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                  width: 150.w,
-                  child: Image.asset(
-                    AppImages.iceCream,
-                    fit: BoxFit.cover,
-                  )),
+
+                  ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Special Deal For\nOctober",
                     style: TextStyle(
                         fontFamily: "Inter",
-                        fontSize: 18.sp,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColors.white),
                     textAlign: TextAlign.left,

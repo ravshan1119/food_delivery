@@ -38,13 +38,13 @@ class ButtonBanner extends StatelessWidget {
               border: Border.all(color: borderColor)),
           child: Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
               child: GradientText(
                 title,
                 gradient: AppColors.gradient,
                 style: TextStyle(
                   fontFamily: "Inter",
-                  fontSize: 16.sp,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w400,
                 ),
               ),
