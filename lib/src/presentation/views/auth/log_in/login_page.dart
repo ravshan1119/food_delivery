@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery/src/data/firebase/firebase_service.dart';
-import 'package:food_delivery/src/data/universal_data.dart';
 import 'package:food_delivery/src/presentation/views/auth/log_in/widgets/social_button.dart';
 import 'package:food_delivery/src/presentation/widgets/app_text_field.dart';
 import 'package:food_delivery/src/utils/resources/app_icons.dart';
@@ -113,15 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                         borderColor: AppColors.c_F4F4F4,
                         title: "Google",
                         logo: SvgPicture.asset(AppIcons.google),
-                        onTap: () async {
-                          UserCredential? userCredential;
-                          UserCredential user =
-                              await firebaseService.signInWithGoogle();
-                          // if (user.error.isEmpty) {
-                          //   userCredential = user as UserCredential;
-                          // }
-                          print("User: ${user?.user?.email}");
-                        },
+                        onTap: () async {},
                       ),
                     ],
                   ),
